@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRural - Accessible Learning for Everyone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #f0f9ff;
+            background-image: radial-gradient(#0ea5e9 0.5px, transparent 0.5px), radial-gradient(#0ea5e9 0.5px, #f0f9ff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-blue-600 p-2 rounded-lg text-white">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-slate-900">EduRural</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#mission" class="text-slate-600 hover:text-blue-600 font-medium transition">Our Mission</a>
+                    <a href="#features" class="text-slate-600 hover:text-blue-600 font-medium transition">Features</a>
+                    <a href="#impact" class="text-slate-600 hover:text-blue-600 font-medium transition">Impact</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-blue-600 font-medium transition">Pricing</a>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg shadow-blue-200">
+                        Partner With Us
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-xl">
+                <a href="#mission" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Our Mission</a>
+                <a href="#features" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Features</a>
+                <a href="#impact" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Impact</a>
+                <a href="#pricing" class="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Pricing</a>
+                <button class="w-full text-left px-3 py-3 text-blue-600 font-bold">Partner With Us</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Bridging the Education Gap
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-bold text-slate-900 leading-tight">
+                        Quality Education for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500">Every Rural Child</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+                        A dynamic e-learning platform delivering world-class curriculum to rural communities for just <span class="font-bold text-blue-600">5% of the cost</span> of traditional schooling.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-blue-200 transition transform hover:-translate-y-1">
+                            Sponsor a Student
+                        </button>
+                        <button class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-bold text-lg shadow-sm transition flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            View Demo
+                        </button>
+                    </div>
+                    
+                    <div class="pt-8 border-t border-slate-200/60">
+                        <p class="text-sm text-slate-500 font-medium mb-4">Trusted by communities in:</p>
+                        <div class="flex gap-6 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+                            <!-- Placeholder Logos for Partners -->
+                            <div class="h-8 w-24 bg-slate-300 rounded animate-pulse"></div>
+                            <div class="h-8 w-24 bg-slate-300 rounded animate-pulse delay-75"></div>
+                            <div class="h-8 w-24 bg-slate-300 rounded animate-pulse delay-150"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative lg:h-[600px] flex items-center justify-center">
+                    <!-- Abstract representation of learning -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-teal-100 rounded-[3rem] transform rotate-3 scale-90"></div>
+                    <div class="relative w-full max-w-lg glass-card p-8 rounded-3xl shadow-2xl animate-float">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600">
+                                    <i data-lucide="user" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-800">Student Progress</h3>
+                                    <p class="text-xs text-slate-500">Grade 4 • Science</p>
+                                </div>
+                            </div>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">Active</span>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="flex justify-between mb-2 text-sm font-semibold">
+                                    <span>Weekly Goal</span>
+                                    <span class="text-blue-600">85%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                    <i data-lucide="award" class="w-8 h-8 text-blue-600 mx-auto mb-2"></i>
+                                    <div class="text-2xl font-bold text-slate-800">12</div>
+                                    <div class="text-xs text-slate-500 uppercase tracking-wide">Badges Earned</div>
+                                </div>
+                                <div class="bg-teal-50 p-4 rounded-xl text-center">
+                                    <i data-lucide="clock" class="w-8 h-8 text-teal-600 mx-auto mb-2"></i>
+                                    <div class="text-2xl font-bold text-slate-800">45h</div>
+                                    <div class="text-xs text-slate-500 uppercase tracking-wide">Learning Time</div>
+                                </div>
+                            </div>
+
+                             <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl">
+                                <div class="bg-white p-2 rounded-lg shadow-sm">
+                                    <i data-lucide="play" class="w-5 h-5 text-slate-700 fill-slate-700"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-slate-800">Next: Photosynthesis</div>
+                                    <div class="text-xs text-slate-500">Interactive Module • 15 mins</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Impact Stats -->
+    <section id="mission" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why We Exist</h2>
+                <p class="text-lg text-slate-600">Millions of children in rural areas lack access to quality education due to infrastructure and cost barriers. We are changing that narrative.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i data-lucide="globe-2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Increased Access</h3>
+                    <p class="text-slate-600">Bringing the classroom to the doorstep. Our platform works on low-bandwidth networks and affordable devices.</p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-teal-200 transition duration-300 group">
+                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6 group-hover:bg-teal-600 group-hover:text-white transition">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Personalized Learning</h3>
+                    <p class="text-slate-600">AI-driven curriculum adapts to each child's pace, ensuring no student is left behind regardless of their starting point.</p>
+                </div>
+                
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-orange-200 transition duration-300 group">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition">
+                        <i data-lucide="trending-up" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Improved Outcomes</h3>
+                    <p class="text-slate-600">Visual, interactive learning has been proven to increase retention rates by up to 60% compared to traditional rote learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <!-- Feature Image Placeholder -->
+                    <div class="relative bg-slate-800 rounded-2xl overflow-hidden aspect-video shadow-2xl border border-slate-700">
+                         <!-- Simplified Code/Interface Mockup -->
+                         <div class="absolute inset-0 p-6 flex flex-col">
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="flex-1 bg-slate-900 rounded-lg p-4 font-mono text-sm text-blue-300 opacity-80">
+                                > Starting Module: Basic Math<br>
+                                > Loading localized content...<br>
+                                > Audio enabled: Yes<br>
+                                > Connectivity: Low Bandwidth Mode Active<br><br>
+                                <span class="text-white">Welcome, student! Let's solve this together.</span>
+                            </div>
+                            <!-- Gamification Elements -->
+                            <div class="mt-4 flex gap-4">
+                                <div class="bg-slate-700/50 rounded-lg p-3 flex-1 flex items-center gap-3">
+                                     <i data-lucide="gamepad-2" class="text-purple-400"></i>
+                                     <span class="text-sm font-medium">Gamified Tests</span>
+                                </div>
+                                <div class="bg-slate-700/50 rounded-lg p-3 flex-1 flex items-center gap-3">
+                                     <i data-lucide="wifi-off" class="text-blue-400"></i>
+                                     <span class="text-sm font-medium">Offline Mode</span>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <!-- Decorative circle -->
+                    <div class="absolute -top-10 -left-10 w-32 h-32 bg-blue-600 rounded-full mix-blend-multiply filter blur-2xl opacity-30"></div>
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-teal-600 rounded-full mix-blend-multiply filter blur-2xl opacity-30"></div>
+                </div>
+
+                <div class="order-1 lg:order-2 space-y-8">
+                    <h2 class="text-3xl md:text-4xl font-bold">Built for the Real World</h2>
+                    <p class="text-slate-400 text-lg">We understand the challenges of rural education. Our technology is built to overcome them.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                                <i data-lucide="smartphone" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Device Agnostic</h4>
+                                <p class="text-slate-400">Works seamlessly on low-cost smartphones, tablets, and refurbished desktops.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                                <i data-lucide="download-cloud" class="w-6 h-6 text-teal-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Offline Capability</h4>
+                                <p class="text-slate-400">Download lessons when connectivity is available; learn anywhere, anytime without data.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                                <i data-lucide="languages" class="w-6 h-6 text-orange-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Localized Content</h4>
+                                <p class="text-slate-400">Curriculum available in regional dialects to ensure language is not a barrier to learning concepts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing/Cost Comparison -->
+    <section id="pricing" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Radical Affordability</h2>
+                <p class="text-lg text-slate-600">We leverage technology to slash overheads, passing the savings directly to the families who need it most.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto">
+                <!-- Traditional Schooling Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 opacity-70 scale-95 transform">
+                    <h3 class="text-xl font-bold text-slate-500 mb-2">Traditional Private Schooling</h3>
+                    <div class="text-3xl font-bold text-slate-400 mb-6 text-decoration-line-through decoration-red-500">$500 <span class="text-sm font-normal text-slate-400">/ year</span></div>
+                    <ul class="space-y-4 text-slate-500 mb-8">
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="w-5 h-5 text-red-400"></i> High transport costs</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="w-5 h-5 text-red-400"></i> Expensive textbooks</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="w-5 h-5 text-red-400"></i> Uniform requirements</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x" class="w-5 h-5 text-red-400"></i> Rigid schedules</li>
+                    </ul>
+                    <a href="#" class="block w-full text-center py-3 px-6 rounded-xl border border-slate-200 text-slate-400 font-semibold cursor-not-allowed">Standard Model</a>
+                </div>
+
+                <!-- EduRural Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-500 relative transform hover:scale-105 transition duration-300">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">BEST VALUE</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">EduRural Subscription</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-5xl font-bold text-blue-600">$25</span>
+                        <span class="text-slate-500 font-medium">/ year</span>
+                    </div>
+                    <p class="text-green-600 text-sm font-bold mb-6 flex items-center gap-1">
+                        <i data-lucide="check-circle-2" class="w-4 h-4"></i> 95% Cheaper than average
+                    </p>
+                    <ul class="space-y-4 text-slate-700 mb-8">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i> Zero transport Needed</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i> Digital Library Included</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i> Learn from Home</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-5 h-5 text-green-500"></i> 24/7 Teacher Access</li>
+                    </ul>
+                    <button class="block w-full text-center py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg shadow-blue-200 transition">Start Learning Today</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial/Success Story -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 relative overflow-hidden text-center md:text-left">
+                <!-- Abstract background shapes -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-slate-200 rounded-full border-4 border-slate-700 flex-shrink-0 overflow-hidden">
+                        <!-- Placeholder for user image -->
+                        <div class="w-full h-full bg-slate-300 flex items-center justify-center text-slate-500">
+                             <i data-lucide="user" class="w-12 h-12"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex gap-1 text-yellow-400 mb-4 justify-center md:justify-start">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <blockquote class="text-xl md:text-2xl font-medium text-white mb-6">
+                            "Before EduRural, my daughter had to walk 5 miles to the nearest school. Now, she learns math and science right from our living room, and her grades have never been better."
+                        </blockquote>
+                        <div class="text-blue-300 font-bold">Sarah M.</div>
+                        <div class="text-slate-400 text-sm">Parent from Rural District A</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Join the Education Revolution</h2>
+            <p class="text-blue-100 text-xl mb-10 max-w-2xl mx-auto">Whether you are a parent, a donor, or a local government, we have a solution tailored for your community.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition shadow-lg">Get Started Now</button>
+                <button class="bg-blue-700 border border-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-800 transition">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                        <span class="font-bold text-xl">EduRural</span>
+                    </div>
+                    <p class="text-sm text-slate-400">Democratizing education through technology and accessibility.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Curriculum</a></li>
+                        <li><a href="#" class="hover:text-white transition">Offline Mode</a></li>
+                        <li><a href="#" class="hover:text-white transition">For Schools</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Impact Report</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>&copy; 2024 EduRural Inc. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Helper to init icons safely
+        function initIcons() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                // Retry after a short delay if script is still loading
+                setTimeout(initIcons, 50);
+            }
+        }
+
+        // Initialize Lucide icons
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initIcons);
+        } else {
+            initIcons();
+        }
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
